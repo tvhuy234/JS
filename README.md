@@ -73,6 +73,13 @@
 
 [JavaScript Dates](#javascript-dates)
 
+[JavaScript Date Format](#javascript-date-format)
+
+
+[JavaScript Date Get Methods](#javascript-date-get-methods)
+
+[JavaScript Date Set Methods](#javascript-date-set-methods)
+
 # JavaScript Where To
 
 The `<script>` Tag
@@ -1190,13 +1197,13 @@ Redeclaring or reassigning an existing const array, in the same scope, or in the
 
 Redeclaring an array with const, in another scope, or in another block, is allowed:
 
-  const cars = ["Volvo", "BMW"];       // Allowed
-  {
-    const cars = ["Volvo", "BMW"];     // Allowed
-  }
-  {
-    const cars = ["Volvo", "BMW"];     // Allowed
-  }
+    const cars = ["Volvo", "BMW"];       // Allowed
+    {
+      const cars = ["Volvo", "BMW"];     // Allowed
+    }
+    {
+      const cars = ["Volvo", "BMW"];     // Allowed
+    }
 
 # JavaScript Dates
 
@@ -1206,24 +1213,43 @@ January = 0.
 
 December = 11.
 
-  const d = new Date();
-  // Sat Oct 23 2021 10:32:02 GMT+0700 (Indochina Time)
+    const d = new Date();
+    // Sat Oct 23 2021 10:32:02 GMT+0700 (Indochina Time)
 
 **Creating Date Objects**
 
 There are 4 ways to create a new date object:
 
-  new Date()
-  new Date(year, month, day, hours, minutes, seconds, milliseconds)
-  new Date(milliseconds)
-  new Date(date string)
-
-
-
+    new Date()
+    // creates a new date object with the current date and time
+    new Date(year, month, day, hours, minutes, seconds, milliseconds)
+    //creates a new date object with a specified date and time
+    new Date(milliseconds)
+    // creates a new date object as zero time plus milliseconds
+    new Date(date string)
+    // creates a new date object from a date string
 
 # JavaScript Date Format
 
+    Type	      Example
+    ISO Date    "2015-03-25" (The International Standard)
+    Short Date	"03/25/2015"
+    Long Date	  "Mar 25 2015" or "25 Mar 2015"
+
 # JavaScript Date Get Methods
+
+    Method            Description
+    getFullYear()	    Get the year as a four digit number (yyyy)
+    getMonth()	      Get the month as a number (0-11)
+    getDate()	        Get the day as a number (1-31)
+    getHours()  	    Get the hour (0-23)
+    getMinutes()	    Get the minute (0-59)
+    getSeconds()	    Get the second (0-59)
+    getMilliseconds()	Get the millisecond (0-999)
+    getTime()	        Get the time (milliseconds since January 1, 1970)
+    getDay()	        Get the weekday as a number (0-6)
+    Date.now()	      Get the time. ECMAScript 5.
+
 
 # JavaScript Date Set Methods
 
