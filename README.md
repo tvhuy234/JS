@@ -80,12 +80,34 @@
 
 [JavaScript Date Set Methods](#javascript-date-set-methods)
 
+[JavaScript Math](#javascript-math)
+
+[JavaScript Random](#javascript-random)
+
+[JavaScript Booleans
+](#javascript-booleans
+)
+
+[JavaScript Comparisons
+](#javascript-comparisons
+)
+
+[JavaScript Conditions](#javascript-conditions)
+
+[JavaScript Switch](#javascript-switch)
+
+[JavaScript Loop For](#javascript-loop-for)
+
+
+
+
 # JavaScript Where To
 
 The `<script>` Tag
 In HTML, JavaScript code is inserted between `<script>` and `</script>` tags.
 
 Scripts can be placed in the `<body>`, or in the `<head>` section of an HTML page, or in both.
+
 
 
 ### **External JavaScript:**
@@ -1232,15 +1254,15 @@ There are 4 ways to create a new date object:
 # JavaScript Date Format
 
     Type	      Example
-    ISO Date    "2015-03-25" (The International Standard)
-    Short Date	"03/25/2015"
+    ISO Date      "2015-03-25" (The International Standard)
+    Short Date	  "03/25/2015"
     Long Date	  "Mar 25 2015" or "25 Mar 2015"
 
 # JavaScript Date Get Methods
 
-    Method            Description
+    Method              Description
     getFullYear()	    Get the year as a four digit number (yyyy)
-    getMonth()	      Get the month as a number (0-11)
+    getMonth()	        Get the month as a number (0-11)
     getDate()	        Get the day as a number (1-31)
     getHours()  	    Get the hour (0-23)
     getMinutes()	    Get the minute (0-59)
@@ -1248,22 +1270,283 @@ There are 4 ways to create a new date object:
     getMilliseconds()	Get the millisecond (0-999)
     getTime()	        Get the time (milliseconds since January 1, 1970)
     getDay()	        Get the weekday as a number (0-6)
-    Date.now()	      Get the time. ECMAScript 5.
+    Date.now()	        Get the time. ECMAScript 5.
 
 
 # JavaScript Date Set Methods
+    setDate()	        Set the day as a number (1-31)
+    setFullYear()	    Set the year (optionally month and day)
+    setHours()	        Set the hour (0-23)
+    setMilliseconds()	Set the milliseconds (0-999)
+    setMinutes()	    Set the minutes (0-59)
+    setMonth()	        Set the month (0-11)
+    setSeconds()	    Set the seconds (0-59)
+    setTime()	        Set the time (milliseconds since January 1, 1970)
 
 # JavaScript Math
 
+**Math Properties (Constants)**
+
+    Math.E        // returns Euler's number
+    Math.PI       // returns PI
+    Math.SQRT2    // returns the square root of 2
+    Math.SQRT1_2  // returns the square root of 1/2
+    Math.LN2      // returns the natural logarithm of 2
+    Math.LN10     // returns the natural logarithm of 10
+    Math.LOG2E    // returns base 2 logarithm of E
+    Math.LOG10E   // returns base 10 logarithm of E
+
+**Math.round()**
+
+Math.round(x) returns the nearest integer:
+
+    Math.round(4.9);    // returns 5
+    Math.round(4.7);    // returns 5
+    Math.round(4.4);    // returns 4
+    Math.round(4.2);    // returns 4
+    Math.round(-4.2);    // returns -4
+
+**Math.ceil()**
+
+Math.ceil(x) returns the value of x rounded up to its nearest integer:
+
+
+    Math.ceil(4.9);     // returns 5
+    Math.ceil(4.7);     // returns 5
+    Math.ceil(4.4);     // returns 5
+    Math.ceil(4.2);     // returns 5
+    Math.ceil(-4.2);     // returns -4
+
+**Math.floor()**
+
+Math.floor(x) returns the value of x rounded down to its nearest integer:
+
+    Math.floor(4.9);    // returns 4
+    Math.floor(4.7);    // returns 4
+    Math.floor(4.4);    // returns 4
+    Math.floor(4.2);    // returns 4
+    Math.floor(-4.2);    // returns -5
+
+**Math.trunc()**
+
+Math.trunc(x) returns the integer part of x:
+
+
+    Math.trunc(4.9);    // returns 4
+    Math.trunc(4.7);    // returns 4
+    Math.trunc(4.4);    // returns 4
+    Math.trunc(4.2);    // returns 4
+    Math.trunc(-4.2);    // returns -4
+**Math.sign()**
+
+Math.sign(x) returns if x is negative, null or positive:
+
+
+    Math.sign(-4);    // returns -1
+    Math.sign(0);    // returns 0
+    Math.sign(4);    // returns 1
+
+
+**Math.pow()**
+
+Math.pow(x, y) returns the value of x to the power of y:
+
+
+    Math.pow(8, 2);      // returns 64
+**Math.sqrt()**
+
+Math.sqrt(x) returns the square root of x:
+
+
+    Math.sqrt(64);      // returns 8
+**Math.abs()**
+
+Math.abs(x) returns the absolute (positive) value of x:
+
+
+    Math.abs(-4.7);     // returns 4.7
+**Math.sin()**
+
+Math.sin(x) returns the sine (a value between -1 and 1) of the angle x (given in radians).
+
+If you want to use degrees instead of radians, you have to convert degrees to radians:
+
+Angle in radians = Angle in degrees x PI / 180.
+
+
+    Math.sin(90 * Math.PI / 180);     // returns 1 (the sine of 90 degrees)
+
+**Math.cos()**
+
+Math.cos(x) returns the cosine (a value between -1 and 1) of the angle x (given in radians).
+
+If you want to use degrees instead of radians, you have to convert degrees to radians:
+
+Angle in radians = Angle in degrees x PI / 180.
+
+
+    Math.cos(0 * Math.PI / 180);     // returns 1 (the cos of 0 degrees)
+**Math.min() and Math.max()**
+
+**Math.random()**
+
+**The Math.log() Method**
+
+Math.log(x) returns the natural logarithm of x:
+
+    Math.log(1);    // returns 0
+    The natural logarithm returns the time needed to reach a certain level of growth.
+
+Math.E and Math.log() are twins.
+
+How many times must we multiply Math.E to get 10?
+
+
+    Math.log(10);    // returns 2.302585092994046
+
+**The Math.log2() Method**
+
+Math.log2(x) returns the base 2 logarithm of x.
+
+How many times must we multiply 2 to get 8?
+
+
+    Math.log2(8);    // returns 3
+**The Math.log10() Method**
+Math.log10(x) returns the base 10 logarithm of x.
+
+How many times must we multiply 10 to get 1000?
+
+
+    Math.log10(1000);    // returns 3
+
+
 # JavaScript Random
+Math.random() returns a random number between 0 (inclusive),  and 1 (exclusive):
+
+    Math.random();
+
+**JavaScript Random Integers**
+Math.random() used with Math.floor() can be used to return random integers.
+
+    
+    // Returns a random integer from 0 to 9:
+    Math.floor(Math.random() * 10);
+    // Returns a random integer from 0 to 100:
+    Math.floor(Math.random() * 101);
+    // Returns a random integer from 1 to 10:
+    Math.floor(Math.random() * 10) + 1;
+
 
 # JavaScript Booleans
 
+    Boolean(10 > 9)        // returns true
+    (10 > 9)              // also returns true
+    10 > 9                // also returns true
+
+**Everything With a "Value" is True**
+
+    100 is true
+    3.14 is true
+    -15 is true
+    Any (not empty) string is true
+    Even the string 'false' is true
+    Any expression (except zero) is true
+**Everything Without a "Value" is False**
+
+    let x = 0; // False
+    let x = -0; // False
+    let x = ""; // False
+    let x; // False
+    let x = null; // False
+    let x = false; // False
+    let x = 10 / "Hallo"; // False
+
+**Booleans Can be Objects**
+
+  let x = false;
+  let y = new Boolean(false);
+
+  // typeof x returns boolean
+  // typeof y returns object
+
+    let x = false;             
+    let y = new Boolean(false);
+
+    // (x == y) is true because x and y have equal values
+
+    let x = false;             
+    let y = new Boolean(false);
+
+    // (x === y) is false because x and y have different types
+
 # JavaScript Comparisons
+
+Conditional (Ternary) Operator
+JavaScript also contains a conditional operator that assigns a value to a variable based on some condition.
+
+Syntax
+
+
+    variablename = (condition) ? value1:value2 
+
+    let voteable = (age < 18) ? "Too young":"Old enough";
 
 # JavaScript Conditions
 
+    if (time < 10) {
+      greeting = "Good morning";
+    } else if (time < 20) {
+      greeting = "Good day";
+    } else {
+      greeting = "Good evening";
+    }
+
 # JavaScript Switch
+
+Syntax:
+
+    switch(expression) {
+      case x:
+        // code block
+        break;
+      case y:
+        // code block
+        break;
+      default:
+        // code block
+    }
+
+**The default Keyword**
+
+The default keyword specifies the code to run if there is no case match. The default case does not have to be the last case in a switch block:
+
+    switch (new Date().getDay()) {
+      default:
+        text = "Looking forward to the Weekend";
+        break;
+      case 6:
+        text = "Today is Saturday";
+        break;
+      case 0:
+        text = "Today is Sunday";
+    }
+
+**Common Code Blocks**
+
+    switch (new Date().getDay()) {
+      case 4:
+      case 5:
+        text = "Soon it is Weekend";
+        break;
+      case 0:
+      case 6:
+        text = "It is Weekend";
+        break;
+      default:
+        text = "Looking forward to the Weekend";
+    }
+
 
 # JavaScript Loop For
 
