@@ -71,6 +71,8 @@
 ](#javascript-array-const
 )
 
+[JavaScript Dates](#javascript-dates)
+
 # JavaScript Where To
 
 The `<script>` Tag
@@ -1186,9 +1188,38 @@ Redeclaring or reassigning an existing const array, in the same scope, or in the
     cars = ["Volvo", "BMW"];           // Not allowed
     }
 
+Redeclaring an array with const, in another scope, or in another block, is allowed:
 
+  const cars = ["Volvo", "BMW"];       // Allowed
+  {
+    const cars = ["Volvo", "BMW"];     // Allowed
+  }
+  {
+    const cars = ["Volvo", "BMW"];     // Allowed
+  }
 
 # JavaScript Dates
+
+Note: JavaScript counts months from 0 to 11:
+
+January = 0.
+
+December = 11.
+
+  const d = new Date();
+  // Sat Oct 23 2021 10:32:02 GMT+0700 (Indochina Time)
+
+**Creating Date Objects**
+
+There are 4 ways to create a new date object:
+
+  new Date()
+  new Date(year, month, day, hours, minutes, seconds, milliseconds)
+  new Date(milliseconds)
+  new Date(date string)
+
+
+
 
 # JavaScript Date Format
 
