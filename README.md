@@ -1155,6 +1155,12 @@ An array declared with var does not have block scope:
     }
     // Here cars[0] is "Toyota"
 
+**Redeclaring Arrays**
+
+  var cars = ["Volvo", "BMW"];   // Allowed
+  var cars = ["Toyota", "BMW"];  // Allowed
+  cars = ["Volvo", "Saab"];      // Allowed
+
 
 
 
