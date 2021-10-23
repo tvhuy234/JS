@@ -1162,6 +1162,28 @@ An array declared with var does not have block scope:
     cars = ["Volvo", "Saab"];      // Allowed
 
 
+Redeclaring or reassigning an array to const, in the same scope, or in the same block, is not allowed:
+
+
+    var cars = ["Volvo", "BMW"];         // Allowed
+    const cars = ["Volvo", "BMW"];       // Not allowed
+    {
+      var cars = ["Volvo", "BMW"];         // Allowed
+      const cars = ["Volvo", "BMW"];       // Not allowed
+    }
+    
+Redeclaring or reassigning an existing const array, in the same scope, or in the same block, is not allowed:
+    const cars = ["Volvo", "BMW"];       // Allowed
+    const cars = ["Volvo", "BMW"];       // Not allowed
+    var cars = ["Volvo", "BMW"];         // Not allowed
+    cars = ["Volvo", "BMW"];             // Not allowed
+
+    {
+    const cars = ["Volvo", "BMW"];     // Allowed
+    const cars = ["Volvo", "BMW"];     // Not allowed
+    var cars = ["Volvo", "BMW"];       // Not allowed
+    cars = ["Volvo", "BMW"];           // Not allowed
+    }
 
 
 
