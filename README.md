@@ -1173,6 +1173,7 @@ Redeclaring or reassigning an array to const, in the same scope, or in the same 
     }
     
 Redeclaring or reassigning an existing const array, in the same scope, or in the same block, is not allowed:
+
     const cars = ["Volvo", "BMW"];       // Allowed
     const cars = ["Volvo", "BMW"];       // Not allowed
     var cars = ["Volvo", "BMW"];         // Not allowed
