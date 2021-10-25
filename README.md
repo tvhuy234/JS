@@ -96,8 +96,74 @@
 
 [JavaScript Switch](#javascript-switch)
 
-[JavaScript Loop For](#javascript-loop-for)
+[JavaScript Loop](#javascript-loop)
 
+[JavaScript Break Continue](#javascript-break-and-continue)
+
+[JavaScript Sets](#javascript-sets)
+
+[JavaScript Maps
+](#javascript-maps
+)
+
+[JavaScript typeof
+](#javascript-typeof
+)
+
+[JavaScript Type Conversion
+](#javascript-type-conversion
+)
+
+[JavaScript Bitwise](#javascript-bitwise)
+
+[JavaScript Regular Expressions
+](#javascript-regular-expressions
+)
+
+[JavaScript Errors](#javascript-errors)
+
+[JavaScript Scope](#javascrip-scope)
+
+[JavaScript Hoisting
+](#javascript-hoisting
+)
+
+[JavaScript Strict Mode](#javascript-strict-mode)
+
+
+
+[JavaScript this Keyword](#javascript-this-keyword)
+
+[JavaScript Arrow Function
+](#javascript-arrow-function
+)
+
+[JavaScript Classes
+](#javascript-classes
+)
+
+[JavaScript JSON
+](#javascript-json
+)
+
+[JavaScript Debugging
+](#javascript-debugging
+)
+
+[JavaScript Style Guide
+](#javascript-style-guide
+)
+
+[JavaScript Mistakes](#javascript-mistakes)
+
+
+[JavaScript Performance
+](#javascript-performance
+)
+
+[JavaScript Reserved Words
+](javascript-reserved-words
+)
 
 
 
@@ -1548,55 +1614,1061 @@ The default keyword specifies the code to run if there is no case match. The def
     }
 
 
-# JavaScript Loop For
+# JavaScript Loop 
 
-# JavaScript Loop In
+**For Loop**
 
-# JavaScript Loop Of
+    for (statement 1; statement 2; statement 3) {
+    // code block to be executed
+    }
 
-# JavaScript Loop While
+**Loop Scope**
 
-# JavaScript Break
+Using var in a loop:
 
-# JavaScript Iterables
+    var i = 5;
+
+    for (var i = 0; i < 10; i++) {
+    // some code
+    }
+
+    // Here i is 10
+
+Using let in a loop:
+
+    let i = 5;
+
+    for (let i = 0; i < 10; i++) {
+    // some code
+    }
+
+    // Here i is 5
+
+**The For In Loop**
+
+Syntax:
+
+    for (key in object) {
+    // code block to be executed
+    }
+
+*Example:*
+
+    const person = {fname:"John", lname:"Doe", age:25};
+
+    let text = "";
+    for (let x in person) {
+    text += person[x];
+    }
+
+**Array.forEach()**
+
+The forEach() method calls a function (a callback function) once for each array element.
+
+
+    const numbers = [45, 4, 9, 16, 25];
+
+    let txt = "";
+    numbers.forEach(myFunction);
+
+    function myFunction(value, index, array) {
+    txt += value;
+    }
+
+**The For Of Loop**
+
+Looping over an Array:
+
+    const cars = ["BMW", "Volvo", "Mini"];
+
+    let text = "";
+    for (let x of cars) {
+    text += x;
+    }
+
+Looping over a String:
+
+    let language = "JavaScript";
+
+    let text = "";
+    for (let x of language) {
+    text += x;
+    }
+
+**The While Loop**
+
+    while (i < 10) {
+    text += "The number is " + i;
+    i++;
+    }
+
+
+**The Do While Loop**
+
+    do {
+    text += "The number is " + i;
+    i++;
+    }
+    while (i < 10);
+
+
+# JavaScript Break and Continue
+
+Break Statement used to "jump out" of a switch() statement.
+
+The break statement can also be used to jump out of a loop:
+
+    for (let i = 0; i < 10; i++) {
+    if (i === 3) { break; }
+    text += "The number is " + i + "<br>";
+    }
+
+**The Continue Statement**
+
+The continue statement breaks one iteration (in the loop), if a specified condition occurs, and continues with the next iteration in the loop.
+
+This example skips the value of 3:
+
+    for (let i = 0; i < 10; i++) {
+    if (i === 3) { continue; }
+    text += "The number is " + i + "<br>";
+    }
 
 # JavaScript Sets
 
+**Essential Set Methods**
+
+    Method	Description
+    new Set()	Creates a new Set
+    add()	    Adds a new element to the Set
+    delete()	Removes an element from a Set
+    has()	    Returns true if a value exists in the Set
+    forEach()	Invokes a callback for each element in the Set
+    values()	Returns an iterator with all the values in a Set
+    Property	Description
+    size	    Returns the number of elements in a Set
+
+
+**How to Create a Set**
+- Passing an Array to new Set()
+- Create a new Set and use add() to add values
+- Create a new Set and use add() to add variables
+
+
+Create a Set:
+
+    const letters = new Set(["a","b","c"]);
+    letters.add("d");
+
+**The forEach() Method**
+
+    // Create a Set
+    const letters = new Set(["a","b","c"]);
+
+    // List all Elements
+    let text = "";
+    letters.forEach (function(value) {
+    text += value;
+    })
+
+**The values() Method**
+
+    letters.values()   // Returns [object Set Iterator]
+
 # JavaScript Maps
 
-# JavaScript Typeof 
+**Essensial Map Methods**
 
+Method	Description
+
+    new Map()	Creates a new Map
+    const fruits = new Map([
+    ["apples", 500],
+    ["bananas", 300],
+    ["oranges", 200]
+    ]);
+
+    set()	    Sets the value for a key in a Map
+    // Create a Map
+    const fruits = new Map();
+    // Set Map Values
+    fruits.set("apples", 500);
+    
+
+    get()	    Gets the value for a key in a Map
+    fruits.get("apples");    // Returns 500
+
+    delete()	Removes a Map element specified by the key
+    has()	    Returns true if a key exists in a Map
+    fruits.has("apples");
+
+    forEach()	Calls a function for each key/value pair in a Map
+    entries()	Returns an iterator with the [key, value] pairs in a Map
+    Property	Description
+    size	    Returns the number of elements in a Map
+
+**How to Create a Map**
+- Passing an Array to new Map()
+- Create a Map and use Map.set()
+
+**The forEach() Method**
+
+The forEach() method calls a function for each key/value pair in a Map:
+
+*Example:*
+
+    // List all entries
+    let text = "";
+    fruits.forEach (function(value, key) {
+    text += key + ' = ' + value;
+    })
+    // apples = 500
+    // bananas = 300
+    // oranges = 200
+
+**The entries() Method**
+
+The entries() method returns an iterator object with the [key, values] in a Map:
+
+*Example:*
+
+    // List all entries
+    let text = "";
+    for (const x of fruits.entries()) {
+    text += x;
+    }
+    // apples,500
+    // bananas,300
+    // oranges,200
+# JavaScript typeof 
+In JavaScript there are 5 different data types that can contain values:
+
+- string
+- number
+- boolean
+- object
+- function
+ 
+There are 6 types of objects:
+
+- Object
+- Date
+- Array
+- String
+- Number
+- Boolean
+ 
+And 2 data types that cannot contain values:
+
+- null
+- undefined
+
+**The typeof Operator**
+
+    typeof "John"                 // Returns "string"
+    typeof 3.14                   // Returns "number"
+    typeof NaN                    // Returns "number"
+    typeof false                  // Returns "boolean"
+    typeof [1,2,3,4]              // Returns "object"
+    typeof {name:'John', age:34}  // Returns "object"
+    typeof new Date()             // Returns "object"
+    typeof function () {}         // Returns "function"
+    typeof myCar                  // Returns "undefined" *
+    typeof null                   // Returns "object"
+
+**Note:**
+
+- The data type of NaN is number
+- The data type of an array is object
+- The data type of a date is object
+- The data type of null is object
+- The data type of an undefined variable is undefined *
+- The data type of a variable that has not been assigned a value is also undefined *
+  
+**Primitive Data**
+
+A primitive data value is a single simple data value with no additional properties and methods.
+
+The typeof operator can return one of these primitive types:
+- string
+- number
+- boolean
+- undefined
+
+        typeof "John"              // Returns "string"
+        typeof 3.14                // Returns "number"
+        typeof true                // Returns "boolean"
+        typeof false               // Returns "boolean"
+        typeof x                   // Returns "undefined" (if x has no value)
+
+**Complex Data**
+
+The typeof operator can return one of two complex types:
+- function
+- object
+ 
+The typeof operator returns "object" for objects, arrays, and null.
+
+The typeof operator does not return "object" for functions.
+
+    typeof {name:'John', age:34} // Returns "object"
+    typeof [1,2,3,4]             // Returns "object" (not "array", see note below)
+    typeof null                  // Returns "object"
+    typeof function myFunc(){}   // Returns "function"
+
+**The constructor Property**
+
+    "John".constructor                // Returns function String()  {[native code]}
+    (3.14).constructor                // Returns function Number()  {[native code]}
+    false.constructor                 // Returns function Boolean() {[native code]}
+    [1,2,3,4].constructor             // Returns function Array()   {[native code]}
+    {name:'John',age:34}.constructor  // Returns function Object()  {[native code]}
+    new Date().constructor            // Returns function Date()    {[native code]}
+    function () {}.constructor        // Returns function Function(){[native code]}
+
+**Undefined**
+
+In JavaScript, a variable without a value, has the value undefined. The type is also undefined. Any variable can be emptied, by setting the value to undefined. The type will also be undefined.
+
+    let car;    // Value is undefined, type is undefined
+    car = undefined;    // Value is undefined, type is undefined
+
+**Empty Values**
+
+    let car = "";    // The value is "", the typeof is "string"
+
+**null**
+
+In JavaScript null is "nothing". It is supposed to be something that doesn't exist.
+
+The data type of null is an object.
+
+    let person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+    person = null;    // Now value is null, but type is still an object
+
+    let person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+    person = undefined;   // Now both value and type is undefined
+
+**Difference Between Undefined and Null**
+
+    typeof undefined           // undefined
+    typeof null                // object
+
+    null === undefined         // false
+    null == undefined          // true
 # JavaScript Type Conversion
 
+**Converting Strings to Numbers**
+
+    Number("3.14")    // returns 3.14
+    Number(" ")       // returns 0
+    Number("")        // returns 0
+    Number("99 88")   // returns NaN
+
+**Number Methods**
+
+    Number()	    Returns a number, converted from its argument
+    parseFloat()	Parses a string and returns a floating point number
+    parseInt()	    Parses a string and returns an integer
+
+**The Unary + Operator**
+
+    let y = "5";      // y is a string
+    let x = + y;      // x is a number
+
+If the variable cannot be converted, it will still become a number, but with the value NaN (Not a Number):
+
+    let y = "John";   // y is a string
+    let x = + y;      // x is a number (NaN)
 # JavaScript Bitwise
 
-# JavaScript RegExp
+# JavaScript Regular Expressions
+
+**Using String search() With a String**
+
+    let text = "Visit W3Schools!";
+    let n = text.search("W3Schools");
+    // 6
+
+**Using String search() With a Regular Expression**
+
+    let text = "Visit W3Schools";
+    let n = text.search(/w3schools/i);
+    // 6
 
 # JavaScript Errors
 
+The try statement lets you test a block of code for errors.
+
+The catch statement lets you handle the error.
+
+The throw statement lets you create custom errors.
+
+The finally statement lets you execute code, after try and catch, regardless of the result.
+
+**JavaScript try and catch**
+
+    try {
+    Block of code to try
+    }
+    catch(err) {
+    Block of code to handle errors
+    }
+
+**JavaScript Throws Errors**
+
+When an error occurs, JavaScript will normally stop and generate an error message.
+
+**The throw Statement**
+
+The throw statement allows you to create a custom error.
+
+Technically you can throw an exception (throw an error).
+
+The exception can be a JavaScript String, a Number, a Boolean or an Object:
+
+    throw "Too big";    // throw a text
+    throw 500;          // throw a number
+
+**Input Validation Example**
+
+    <!DOCTYPE html>
+    <html>
+    <body>
+
+    <p>Please input a number between 5 and 10:</p>
+
+    <input id="demo" type="text">
+    <button type="button" onclick="myFunction()">Test Input</button>
+    <p id="p01"></p>
+
+    <script>
+    function myFunction() {
+    const message = document.getElementById("p01");
+    message.innerHTML = "";
+    let x = document.getElementById("demo").value;
+    try {
+        if(x == "") throw "empty";
+        if(isNaN(x)) throw "not a number";
+        x = Number(x);
+        if(x < 5) throw "too low";
+        if(x > 10) throw "too high";
+    }
+    catch(err) {
+        message.innerHTML = "Input is " + err;
+    }
+    }
+    </script>
+
+    </body>
+    </html>
+
+**The finally Statement**
+
+    try {
+    Block of code to try
+    }
+    catch(err) {
+    Block of code to handle errors
+    }
+    finally {
+    Block of code to be executed regardless of the try / catch result
+    }
+
+*Example*
+
+    function myFunction() {
+    const message = document.getElementById("p01");
+    message.innerHTML = "";
+    let x = document.getElementById("demo").value;
+    try {
+        if(x == "") throw "is empty";
+        if(isNaN(x)) throw "is not a number";
+        x = Number(x);
+        if(x > 10) throw "is too high";
+        if(x < 5) throw "is too low";
+    }
+    catch(err) {
+        message.innerHTML = "Error: " + err + ".";
+    }
+    finally {
+        document.getElementById("demo").value = "";
+    }
+    }
+
 # JavaScript Scope
+Scope determines the accessibility (visibility) of variables.
+
+JavaScript has 3 types of scope:
+- Block scope
+- Function scope
+- Global scope
+ 
+**Block scope**
+ 
+        {
+        let x = 2;
+        }
+        // x can NOT be used here
+
+        {
+        var x = 2;
+        }
+        // x CAN be used here
+**Local Scope**
+
+Variables declared within a JavaScript function, become LOCAL to the function.
+
+    // code here can NOT use carName
+
+    function myFunction() {
+    let carName = "Volvo";
+    // code here CAN use carName
+    }
+
+    // code here can NOT use carName
+
+**Function Scope**
+
+ Each function creates a new scope.
+
+    function myFunction() {
+    var carName = "Volvo";   // Function Scope
+    }
+
+**Global JavaScript Variables**
+
+A variable declared outside a function, becomes GLOBAL.
+
+    let carName = "Volvo";
+    // code here can use carName
+
+    function myFunction() {
+    // code here can also use carName
+    }
+
+**Global Scope**
+
+Variables declared Globally (outside any function) have Global Scope.
+
+    var x = 2;       // Global scope
+    let x = 2;       // Global scope
+    const x = 2;       // Global scope
 
 # JavaScript Hoisting
 
+Hoisting is JavaScript's default behavior of moving declarations to the top.
+
+**JavaScript Declarations are Hoisted**
+
+    x = 5; // Assign 5 to x
+
+    elem = document.getElementById("demo"); // Find an element
+    elem.innerHTML = x;                     // Display x in the element
+
+    var x; // Declare x
+
+Example 1 gives the same result as Example 2:
+
+*Example 1:*
+
+    x = 5; // Assign 5 to x
+
+    elem = document.getElementById("demo"); // Find an element
+    elem.innerHTML = x;                     // Display x in the element
+
+    var x; // Declare x
+
+*Example 2:*
+
+    var x; // Declare x
+    x = 5; // Assign 5 to x
+
+    elem = document.getElementById("demo"); // Find an element
+    elem.innerHTML = x;                     // Display x in the element
+
+**The let and const Keywords**
+
+    carName = "Volvo";
+    let carName;
+    // ReferenceError:
+
+
+    carName = "Volvo";
+    const carName;
+    // This code will not run.
+
+**JavaScript Initializations are Not Hoisted**
+
+JavaScript only hoists declarations, not initializations.
+
+Example 1 does not give the same result as Example 2:
+
+*Example 1:*
+
+    var x = 5; // Initialize x
+    var y = 7; // Initialize y
+
+    elem = document.getElementById("demo"); // Find an element
+    elem.innerHTML = x + " " + y;           // Display x and y
+
+
+*Example 2:*
+
+    var x = 5; // Initialize x
+
+    elem = document.getElementById("demo"); // Find an element
+    elem.innerHTML = x + " " + y;           // Display x and y
+
+    var y = 7; // Initialize y
+    // x is 5 and y is undefined 
+
+
 # JavaScript Strict Mode
+"use strict"; Defines that JavaScript code should be executed in "strict mode".
+
+The "use strict" directive is only recognized at the beginning of a script or a function.
+
+
+**Declaring Strict Mode**
+
+    "use strict";
+    x = 3.14;       // This will cause an error because x is not declared
+
+    x = 3.14;       // This will not cause an error.
+    myFunction();
+
+    function myFunction() {
+    "use strict";
+    y = 3.14;   // This will cause an error
+    }
+
+**Not Allowed in Strict Mode**
+
+Using a variable, without declaring it, is not allowed:
+
+    "use strict";
+    x = 3.14;                // This will cause an error
+
+Using an object, without declaring it, is not allowed:
+
+    "use strict";
+    x = {p1:10, p2:20};      // This will cause an error
+
+Deleting a variable (or object) is not allowed.
+
+    "use strict";
+    let x = 3.14;
+    delete x;                // This will cause an error
+
+Deleting a function is not allowed.
+
+    "use strict";
+    function x(p1, p2) {};
+    delete x;                // This will cause an error 
+
+Duplicating a parameter name is not allowed:
+
+    "use strict";
+    function x(p1, p1) {};   // This will cause an error
+
+Octal numeric literals are not allowed:
+
+    "use strict";
+    let x = 010;             // This will cause an error
+
+Octal escape characters are not allowed:
+
+    "use strict";
+    let x = "\010";            // This will cause an error
+
+Writing to a read-only property is not allowed:
+
+    "use strict";
+    const obj = {};
+    Object.defineProperty(obj, "x", {value:0, writable:false});
+
+    obj.x = 3.14;            // This will cause an error
+
+Writing to a get-only property is not allowed:
+
+    "use strict";
+    const obj = {get x() {return 0} };
+
+    obj.x = 3.14;            // This will cause an error
+
+Deleting an undeletable property is not allowed:
+
+    "use strict";
+    delete Object.prototype; // This will cause an error
+
+The word eval cannot be used as a variable:
+
+    "use strict";
+    let eval = 3.14;         // This will cause an error
+
+The word arguments cannot be used as a variable:
+
+    "use strict";
+    let arguments = 3.14;    // This will cause an error
+
+The with statement is not allowed:
+
+    "use strict";
+    with (Math){x = cos(2)}; // This will cause an error
+
+For security reasons, eval() is not allowed to create variables in the scope from which it was called:
+
+    "use strict";
+    eval ("let x = 2");
+    alert (x);             // This will cause an error
+
+The this keyword in functions behaves differently in strict mode.
+
+The this keyword refers to the object that called the function.
+
+If the object is not specified, functions in strict mode will return undefined and functions in normal mode will return the global object (window):
+
+    "use strict";
+    function myFunction() {
+    alert(this); // will alert "undefined"
+    }
+    myFunction();
+
+**Future Proof!**
+
+Keywords reserved for future JavaScript versions can NOT be used as variable names in strict mode:
+
+- implements
+- interface
+- let
+- package
+- private
+- protected
+- public
+- static
+- yield
+
 
 # JavaScript this Keyword
 
+In a method, this refers to the owner object.
+
+Alone, this refers to the global object.
+
+In a function, this refers to the global object.
+
+In a function, in strict mode, this is undefined.
+
+In an event, this refers to the element that received the event.
+
+Methods like call(), and apply() can refer this to any object.
+
+
+**this in a Method**
+
+    fullName : function() {
+    return this.firstName + " " + this.lastName;
+    }
+
+**this Alone**
+
+When used alone, the owner is the Global object, so this refers to the Global object.
+
+In a browser window the Global object is [object Window]:
+
+
+    let x = this;
+    // [object Window]
+
+**this in a Function (Default)**
+
+    function myFunction() {
+    return this;
+    }
+
+**this in a Function (Strict)**
+
+When used in a function, in strict mode, this is undefined.
+
+    "use strict";
+    function myFunction() {
+    return this;
+    }
+
+**this in Event Handlers**
+
+    <button onclick="this.style.display='none'">
+    Click to Remove Me!
+    </button>
+
+**Object Method Binding**
+
+    const person = {
+        firstName  : "John",
+        lastName   : "Doe",
+        id         : 5566,
+        myFunction : function() {
+            return this;
+        }
+    };
+
+**Explicit Function Binding**
+
+    const person1 = {
+    fullName: function() {
+        return this.firstName + " " + this.lastName;
+    }
+    }
+    const person2 = {
+    firstName:"John",
+    lastName: "Doe",
+    }
+    person1.fullName.call(person2);  // Will return "John Doe"
+
+
+
+
 # JavaScript Arrow Function
 
+Arrow functions allow us to write shorter function syntax:
+
+    hello = function() {
+    return "Hello World!";
+    }
+
+    // With Arrow Function:
+    hello = () => {
+    return "Hello World!";
+    }
+
+    // Arrow Functions Return Value by Default:
+    hello = () => "Hello World!";
+
+    // Arrow Function With Parameters:
+    hello = (val) => "Hello " + val;
+
+    // Arrow Function Without Parentheses:
+    hello = val => "Hello " + val;
+
+With arrow functions the this keyword always represents the object that defined the arrow function.
+
+
+
+
+
+
+
 # JavaScript Classes
+JavaScript Classes are templates for JavaScript Objects.
+
+
+Use the keyword class to create a class.
+
+Always add a method named constructor():
+
+    class Car {
+    constructor(name, year) {
+        this.name = name;
+        this.year = year;
+    }
+    }
+
+**Using a Class**
+
+When you have a class, you can use the class to create objects:
+
+
+    let myCar1 = new Car("Ford", 2014);
+    let myCar2 = new Car("Audi", 2019);
+
+**Class Methods** 
+    class Car {
+    constructor(name, year) {
+        this.name = name;
+        this.year = year;
+    }
+    age() {
+        let date = new Date();
+        return date.getFullYear() - this.year;
+    }
+    }
+
+    let myCar = new Car("Ford", 2014);
+    document.getElementById("demo").innerHTML =
+    "My car is " + myCar.age() + " years old.";
+    // My car is 7 years old.
 
 # JavaScript JSON
+JSON is a format for storing and transporting data.
+
+JSON is often used when data is sent from a server to a web page.
+
+**JSON Example**
+
+    {
+    "employees":[
+    {"firstName":"John", "lastName":"Doe"},
+    {"firstName":"Anna", "lastName":"Smith"},
+    {"firstName":"Peter", "lastName":"Jones"}
+    ]
+    }
+    
+**JSON Data - A Name and a Value**
+    "firstName":"John"
+
+**JSON Objects**
+
+    {"firstName":"John", "lastName":"Doe"}
+
+**JSON Arrays**
+
+    "employees":[
+    {"firstName":"John", "lastName":"Doe"},
+    {"firstName":"Anna", "lastName":"Smith"},
+    {"firstName":"Peter", "lastName":"Jones"}
+    ]
+**Converting a JSON Text to a JavaScript Object**
+
+First, create a JavaScript string containing JSON syntax:
+
+    let text = '{ "employees" : [' +
+    '{ "firstName":"John" , "lastName":"Doe" },' +
+    '{ "firstName":"Anna" , "lastName":"Smith" },' +
+    '{ "firstName":"Peter" , "lastName":"Jones" } ]}';
+Then, use the JavaScript built-in function JSON.parse() to convert the string into a JavaScript object:
+
+    const obj = JSON.parse(text);
 
 # JavaScript Debugging
+**The console.log() Method**
+**Setting Breakpoints**
+**The debugger Keyword**
+The debugger keyword stops the execution of JavaScript, and calls (if available) the debugging function.
 
+With the debugger turned on, this code will stop executing before it executes the third line:
+
+    let x = 15 * 5;
+    debugger;
+    document.getElementById("demo").innerHTML = x;
 # JavaScript Style Guide
+Always use the same coding conventions for all your JavaScript projects.
+
 
 # JavaScript Best Practices
+Avoid global variables, avoid new, avoid ==, avoid eval()
+
+Always Declare Local Variables
+
+Declarations on Top
+
+Initialize Variables
+
+Declare Objects with const
+
+Declare Arrays with const
+
+Don't Use new Object()
+
+Use "" instead of new String()
+
+Use 0 instead of new Number()
+
+Use false instead of new Boolean()
+
+Use {} instead of new Object()
+
+Use [] instead of new Array()
+
+Use /()/ instead of new RegExp()
+
+Use function (){} instead of new Function()
+
+**Use === Comparison**
+
+    0 == "";        // true
+    1 == "1";       // true
+    1 == true;      // true
+
+    0 === "";       // false
+    1 === "1";      // false
+    1 === true;     // false
+**Avoid Number, String, and Boolean as Objects**
 
 # JavaScript Mistakes
+**Expecting Loose Comparison**
 
+    let x = 10;
+    let y = "10";
+    if (x == y)
+    // true
+
+    let x = 10;
+    let y = "10";
+    if (x === y)
+    // false
+
+**Confusing Addition & Concatenation**
+
+Addition is about adding numbers.
+
+Concatenation is about adding strings.
+    let x = 10;
+    x = 10 + 5;       // Now x is 15
+
+    let y = 10;
+    y += "5";        // Now y is "105"
+    let x = 10;
+    let y = 5;
+    let z = x + y;     // Now z is 15
+
+    let x = 10;
+    let y = "5";
+    let z = x + y;     // Now z is "105"
+
+**Misunderstanding Floats**  
+
+    let x = 0.1;
+    let y = 0.2;
+    let z = x + y            // the result in z will not be 0.3
+    let z = (x * 10 + y * 10) / 10;       // z will be 0.3
+
+**Accessing Arrays with Named Indexes**
+
+    const person = [];
+    person[0] = "John";
+    person[1] = "Doe";
+    person[2] = 46;
+    person.length;       // person.length will return 3
+    person[0];           // person[0] will return "John"
+
+
+
+    const person = [];
+    person["firstName"] = "John";
+    person["lastName"] = "Doe";
+    person["age"] = 46;
+    person.length;      // person.length will return 0
+    person[0];          // person[0] will return undefined
 # JavaScript Performance
+**Reduce Activity in Loops**
+
+    let l = arr.length;
+    for (let i = 0; i < l; i++) {
+**Reduce DOM Access**
+
+If you expect to access a DOM element several times, access it once, and use it as a local variable:
+
+
+    const obj = document.getElementById("demo");
+    obj.innerHTML = "Hello";
+
+**Avoid Using with**
+
+Avoid using the with keyword. It has a negative effect on speed. It also clutters up JavaScript scopes.
+
+The with keyword is not allowed in strict mode.
+
 
 # JavaScript Reserved Words
 
