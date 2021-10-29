@@ -1,9 +1,6 @@
 
 # CSS Tutorial
 
-[CSS Syntax
-](#css-syntax
-)# CSS Tutorial
 
 [CSS Syntax
 ](#css-syntax
