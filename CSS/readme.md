@@ -21,6 +21,20 @@
 [CSS Backgrounds
 ](#css-backgrounds
 )
+
+[CSS Borders
+](#css-borders
+)
+
+[CSS Margins
+](#css-margins
+)
+
+[CSS Padding
+](#css-padding
+)
+
+
 # CSS Syntax
 A CSS rule consists of a selector and a declaration block.
 
@@ -299,3 +313,207 @@ When using the shorthand property the order of the property values is:
 - background-repeat
 - background-attachment
 - background-position
+
+# CSS Borders
+
+**CSS Border Style**
+
+The border-style property specifies what kind of border to display.
+
+The following values are allowed:
+
+dotted - Defines a dotted border
+
+dashed - Defines a dashed border
+
+solid - Defines a solid border
+
+double - Defines a double border
+
+groove - Defines a 3D grooved border. The effect depends on the border-color value
+
+ridge - Defines a 3D ridged border. The effect depends on the border-color value
+
+inset - Defines a 3D inset border. The effect depends on the border-color value
+
+outset - Defines a 3D outset border. The effect depends on the border-color value
+
+none - Defines no border
+hidden - Defines a hidden border
+
+The border-style property can have from one to four values (for the top border, right border, bottom border, and the left border).
+
+
+
+    p.dotted {border-style: dotted;}
+    p.dashed {border-style: dashed;}
+    p.solid {border-style: solid;}
+    p.double {border-style: double;}
+    p.groove {border-style: groove;}
+    p.ridge {border-style: ridge;}
+    p.inset {border-style: inset;}
+    p.outset {border-style: outset;}
+    p.none {border-style: none;}
+    p.hidden {border-style: hidden;}
+    p.mix {border-style: dotted dashed solid double;}
+
+**CSS Border Width**
+
+The width can be set as a specific size (in px, pt, cm, em, etc) or by using one of the three pre-defined values: thin, medium, or thick:
+
+    p.one {
+     border-style: solid;
+     border-width: 5px;
+    }
+
+    p.two {
+     border-style: solid;
+     border-width: medium;
+    }
+
+    p.three {
+     border-style: dotted;
+     border-width: 2px;
+    }
+
+    p.four {
+     border-style: dotted;
+     border-width: thick;
+    }
+
+**Specific Side Widths**
+
+    p.one {
+     border-style: solid;
+     border-width: 5px 20px; /* 5px top and bottom, 20px on the sides */
+    }
+
+    p.two {
+     border-style: solid;
+     border-width: 20px 5px; /* 20px top and bottom, 5px on the sides */
+    }
+
+    p.three {
+     border-style: solid;
+     border-width: 25px 10px 4px 35px; /* 25px top, 10px right, 4px bottom and 35px left */
+    }
+
+**CSS Border Color**
+
+The color can be set by:
+
+    name - specify a color name, like "red"
+    HEX - specify a HEX value, like "#ff0000"
+    RGB - specify a RGB value, like "rgb(255,0,0)"
+    HSL - specify a HSL value, like "hsl(0, 100%, 50%)"
+    transparent
+
+**Specific Side Colors**
+
+    p.one {
+     border-style: solid;
+     border-color: red green blue yellow; /* red top, green right, blue bottom and yellow left */
+    }
+
+**CSS Border - Individual Sides**
+
+    p {
+     border-top-style: dotted;
+     border-right-style: solid;
+     border-bottom-style: dotted;
+     border-left-style: solid;
+    }
+
+**CSS Border - Shorthand Property**
+
+The border property is a shorthand property for the following individual border properties:
+
+- border-width
+- border-style (required)
+- border-color
+ 
+ 
+        p {
+         border-bottom: 6px solid red;
+         background-color: lightgrey;
+        }
+
+**CSS Rounded Borders**
+
+    p {
+     border: 2px solid red;
+     border-radius: 5px;
+    }
+
+# CSS Margins
+
+Margins are used to create space around elements, outside of any defined borders.
+
+    //Set different margins for all four sides of a <p> element:
+
+    p {
+     margin-top: 100px;
+     margin-bottom: 100px;
+     margin-right: 150px;
+     margin-left: 80px;
+    }
+
+    //Shorthand:
+    p {
+     margin: 25px 50px 75px 100px;
+    }
+**The auto Value**
+
+ Set the margin property to auto to horizontally center the element within its container.
+
+    div {
+     width: 300px;
+     margin: auto;
+     border: 1px solid red;
+    }
+
+**The inherit Value**
+
+    This example lets the left margin of the <p class="ex1"> element be inherited from the parent element (<div>):
+
+    div {
+     border: 1px solid red;
+     margin-left: 100px;
+    }
+
+    p.ex1 {
+     margin-left: inherit;
+    }
+
+**Margin Collapse**
+
+Top and bottom margins of elements are sometimes collapsed into a single margin that is equal to the largest of the two margins.
+
+    h1 {
+     margin: 0 0 50px 0;
+    }
+
+    h2 {
+     margin: 20px 0 0 0;
+    }
+
+# CSS Padding
+
+Padding is used to create space around an element's content, inside of any defined borders.
+
+**Padding - Individual Sides**
+
+    div {
+     padding-top: 50px;
+     padding-right: 30px;
+     padding-bottom: 50px;
+     padding-left: 80px;
+    }
+
+    //Shorthand Property:
+    div {
+     padding: 25px 50px 75px 100px;
+    }
+
+**Padding and Element Width**
+
