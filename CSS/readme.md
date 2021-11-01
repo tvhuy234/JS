@@ -8,7 +8,7 @@
 ](#css-selectors
 )
 
-[How To Add CSS](#how-to-add-css)
+[CSS How To](#css-how-to)
 
 [CSS Comments
 ](#css-comments
@@ -173,7 +173,7 @@ The universal selector (*) selects all HTML elements on the page.
     }
 
 
-# How To Add CSS
+# CSS How To
 
 **External CSS**
 
