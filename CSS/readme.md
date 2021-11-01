@@ -75,7 +75,7 @@
 [CSS Position](#css-position)
 
 
-[Z-index](#z-index)
+[CSS Z-index](#css-z-index)
 
 [CSS Overflow](#css-overflow)
 
@@ -91,8 +91,8 @@
 ](#css-pseudo-classes
 )
 
-[Image Sprites
-](#image-sprites
+[CSS Image Sprites
+](#css-image-sprites
 )
 
 [CSS Attribute Selectors
@@ -891,7 +891,7 @@ There are five different position values:
 - absolute: HTML element is positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed).
 - sticky: HTML element is positioned based on the user's scroll position.
 
-# Z-index
+# CSS Z-index
 The z-index property specifies the stack order of an element.
 
 **The z-index Property**
@@ -1099,7 +1099,7 @@ All CSS Pseudo Elements
     ::first-line	p::first-line	Selects the first line of every <p> element
     ::selection	p::selection	Selects the portion of an element that is selected by a user
 
-# Image Sprites
+# CSS Image Sprites
 
 An image sprite is a collection of images put into a single image.
 
