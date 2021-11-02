@@ -972,7 +972,7 @@ If a floated element is taller than the containing element, it will "overflow" o
 
 **Using inline-block to Create Navigation Links**
 
-- display: inline-block is to display list items horizontally
+- display: inline-block displays list items horizontally
 
         .nav {
          background-color: yellow;
