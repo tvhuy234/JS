@@ -964,6 +964,30 @@ If a floated element is taller than the containing element, it will "overflow" o
 
 # CSS Inline-block
 
+**The display: inline-block Value**
+
+- display: inline-block allows to set a width and height on the element, the top and bottom margins/paddings are respected.
+
+- display: inline-block does not add a line-break after the element, so the element can sit next to other elements.
+
+**Using inline-block to Create Navigation Links**
+
+- display: inline-block is to display list items horizontally
+
+        .nav {
+         background-color: yellow;
+         list-style-type: none;
+         text-align: center; 
+         padding: 0;
+         margin: 0;
+        }
+
+        .nav li {
+         display: inline-block;
+         font-size: 20px;
+         padding: 20px;
+        }
+
 # CSS Align
 
 **Center Align Elements**
