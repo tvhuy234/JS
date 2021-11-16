@@ -43,6 +43,12 @@
 
 [Imports and Exports](#imports-and-exports)
 
+[Destructuring objects and arrays
+](#destructuring-objects-and-arrays)
+
+[Extend and Super
+](#extend-and-super
+)
 # Let
 - Similar to var. 
 - let is only accessible in the block level.
