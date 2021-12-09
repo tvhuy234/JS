@@ -1,48 +1,42 @@
 $(document).ready(function () {
-// CSS slide
-    $("#slide").css("display", "flex")
-    $("#content").width(600);
-    $("#content").height(400);
-    $("#content").css({
-        "border": "black solid 1px",
-        "text-align": "center",
-        "positive": "relative",
-        "padding": "10px"
-    });
-    $(".change").width(40);
-    $(".change").height(20);
-    $(".image").width(600);
-    $(".image").height(400);
-    $(".image:not(:first-child)").hide()
-// Center slide
-    $.fn.center = function () {
-        this.css({
-            'position': 'fixed',
-            'left': '50%',
-            'top': '50%',
-        });
-        this.css({
-            'margin-left': -this.outerWidth() / 2 + 'px',
-            'margin-top': -this.outerHeight() / 2 + 'px'
-        });
-        return this;
-    }
-    $("#slide").center()
-// Slide function
-    var slideIndex = 0;
-    var endImg = $(".image:last").attr("idx");
-    $("#next").click(function () {
-        if (++slideIndex > endImg) {
-            slideIndex = 0;
-        }
-        $(".image").hide();
-        $(".image").eq(slideIndex).show();
-    })
-    $("#back").click(function () {
-        if (--slideIndex < 0) {
-            slideIndex = endImg;
-        }
-        $(".image").hide();
-        $(".image").eq(slideIndex).show();
-    });
+ var slideIndex = 1;
+showSlides(slideIndex);
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+$("#prev").click(function () {
+    plusSlides(-1)
+})
+$("#next").click(function () {
+    plusSlides(1)
+})
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+$("#dot1").click(function () {
+    currentSlide(1)
+})
+$("#dot2").click(function () {
+    currentSlide(2)
+})
+$("#dot3").click(function () {
+    currentSlide(3)
+})
 });
