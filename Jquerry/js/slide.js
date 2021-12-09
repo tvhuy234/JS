@@ -1,4 +1,5 @@
 $(document).ready(function () {
+// CSS slide
     $("#slide").css("display", "flex")
     $("#content").width(600);
     $("#content").height(400);
@@ -13,7 +14,7 @@ $(document).ready(function () {
     $(".image").width(600);
     $(".image").height(400);
     $(".image:not(:first-child)").hide()
-
+// Center slide
     $.fn.center = function () {
         this.css({
             'position': 'fixed',
@@ -27,7 +28,7 @@ $(document).ready(function () {
         return this;
     }
     $("#slide").center()
-
+// Slide function
     var slideIndex = 0;
     var endImg = $(".image:last").attr("idx");
     $("#next").click(function () {
